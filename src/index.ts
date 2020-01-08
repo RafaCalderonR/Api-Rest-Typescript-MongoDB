@@ -1,9 +1,10 @@
-import { App } from './app'
-import { connect } from './database'
+import app from './app';
+import { startConnection } from './database';
 
 async function main() {
-    const app = new App(5000);
-    await app.listen();
+  startConnection();
+  await app.listen(app.get('port'));
+  console.log('Server on port', app.get('port'));
 }
 
 main();

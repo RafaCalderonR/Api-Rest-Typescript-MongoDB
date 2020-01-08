@@ -1,28 +1,28 @@
-version: '2'
+version: '3'
 services:
-  
+
   app:
-    container_name: nbaServer
+    container_name: pcFootball
     restart: always
     build:
       context: . 
-      dockerfile: server.Dockerfile
+      dockerfile: server.dockerfile
     ports:
-      - '5000:5000'
+      - '3000:3000'
     depends_on:
-      - mysqldb
-  mysqldb:
-    image: mysql:5.7
-    restart: always
-    command: --default-authentication-plugin=mysql_native_password
-    volumes:
-      - ./mysql-dump:/docker-entrypoint-initdb.d
-    environment:
-      MYSQL_DATABASE: 'NBA'
-      MYSQL_USER: 'user'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'password'
+      - mongodb
+
+  mongodb:
+    container_name: mongo
+    image: mongo
     ports:
-      - '3306:3306'
-    expose:
-      - '3306'
+      - '27017:27017'
+
+  
+  mongo-seedteam:
+    
+      build:
+        context: .  
+        dockerfile: seeds-players.dockerfile
+      links:
+        - mongodb

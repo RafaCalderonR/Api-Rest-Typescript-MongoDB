@@ -1,13 +1,12 @@
-import { createPool, Pool } from 'mysql2/promise'
+import { connect } from 'mongoose';
 
-export async function connect(): Promise<Pool> {
-    const connection = await createPool({
-        host: 'mysqldb',
-        port:3306,
-        user: 'user',
-        password: 'password',
-        database: 'books',
-        connectionLimit: 10
-    });
-    return connection;
+export async function startConnection() {
+  const db = await connect(
+    'mongodb://mongo:27017/library',
+    {
+      useNewUrlParser: true,
+      useFindAndModify: false,
+    },
+  );
+  console.log('Database is connected');
 }

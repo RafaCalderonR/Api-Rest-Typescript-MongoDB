@@ -1,44 +1,23 @@
+import express, { Application } from 'express';
 import morgan from 'morgan';
-import express, { Application } from 'express'
-import cors from 'cors';
 import path from 'path';
-import helmet from 'helmet';
-import compression from 'compression';
+import cors from 'cors';
+import helmet from 'helmet'
+
+import indexRoutes from './routes/index.routes';
+
+const app: Application = express();
+
+app.set('port', process.env.PORT || 3000);
+
+app.use(morgan('dev'));
+app.use(cors());
+app.use(express.json());
+app.use(helmet());
 
 
+app.use('/api', indexRoutes);
 
-export class App {
+app.use('/uploads', express.static(path.resolve('uploads')));
 
-    app;
-
-    constructor(
-        private port?: number | string
-    ) {
-        this.app = express();
-        this.settings();
-        this.middlewares();
-        this.routes();
-    }
-
-    private settings() {
-        this.app.set('port', this.port || process.env.PORT || 3000);
-    }
-
-    private middlewares() {
-        this.app.use(morgan('dev'));
-        this.app.use(cors());
-        
-        this.app.use(helmet())
-        this.app.use(express.json());
-    }
-
-    private routes() {
-        
-    }
-
-    async listen(): Promise<void> {
-        await this.app.listen(this.app.get('port'));
-        console.log('Server on port', this.app.get('port'));
-    }
-
-}
+export default app;
