@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getBooks, createBook, getBook, deleteBook, updateBook } from '../controllers/book.controller'
+import { getBooks, createBook, getBook, deleteBook, updateBook } from '../controllers/books.controller'
 
 
 const router = Router();

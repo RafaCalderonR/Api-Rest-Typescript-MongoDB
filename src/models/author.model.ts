@@ -1,5 +1,5 @@
 import { Schema, model, Document } from 'mongoose';
-import {Book} from './book.model';
+import {IBook} from './book.model';
 
 
 const schema = new Schema({
@@ -7,10 +7,10 @@ const schema = new Schema({
     name: String,
     books: [{type: Schema.Types.ObjectId, ref:'books'}]
 });
-export interface Author extends Document{
+export interface IAuthor extends Document{
     readonly _id:string;
     readonly name:string;
-    readonly books: Book[];
+    readonly books: IBook[];
 }
 
-export default model<Author>('authors', schema);
+export default model<IAuthor>('authors', schema);

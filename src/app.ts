@@ -5,6 +5,8 @@ import cors from 'cors';
 import helmet from 'helmet'
 
 import indexRoutes from './routes/index.routes';
+import booksRoutes from './routes/books.routes';
+import authorsRoutes from './routes/authors.routes';
 
 const app: Application = express();
 
@@ -16,8 +18,9 @@ app.use(express.json());
 app.use(helmet());
 
 
-app.use('/api', indexRoutes);
+app.use(indexRoutes);
+app.use('/books', booksRoutes);
+app.use('/authors', authorsRoutes)
 
-app.use('/uploads', express.static(path.resolve('uploads')));
 
 export default app;

@@ -1,0 +1,52 @@
+[
+    {
+        "_id": "5ddd157cb25ffbc85884c1f1",
+        "name": "Lolita",
+         "author": "5dd9050ce92b2709489d3a01"
+      },
+      {
+        "_id": "5ddd157cb25ffbc85884c1f3",
+        "name": "La dádiva",
+         "author": "5dd9050ce92b2709489d3a01"
+      },
+      {
+        "_id": "5ddd157cb25ffbc85884c1f4",
+        "name": "Pnin",
+         "author": "5dd9050ce92b2709489d3a01" 
+      },
+      {
+        "_id": {"$oid":"5e15f75d035342e379cbab19"},
+        "name": "Atlas Shrugged",
+         "author": {"$oid":"5dd9050ce92b2709489d3a02"} 
+      },
+      {
+        "_id": {"$oid":"5e15f75d035342e379cbab13"},
+        "name": "The Fountainhead",
+         "author": {"$oid":"5dd9050ce92b2709489d3a02"}
+      },
+      {
+        "_id": {"$oid":"5e15f75d035342e379cbab12"},
+        "name": "The Virtue of Selfishness",
+         "author": {"$oid":"5dd9050ce92b2709489d3a02"}
+      },
+      {
+        "_id": {"$oid":"5e15f75d035342e179cbab19"},
+        "name": "Post Office",
+         "author": {"$oid":"5dd9050ce92b2709489d3a03"}
+      },
+      {
+        "_id": {"$oid":"5e15f75d035342e179cbab19"},
+        "name": "Pulp",
+         "author": {"$oid":"5dd9050ce92b2709489d3a03"} 
+      },
+      {
+        "_id": {"$oid":"5e15f7905e0be486b249d464"},
+        "name": "Los renglones torcidos de Dios",
+         "author": {"$oid":"5dd9050ce92b2709489d3a04"}
+      },
+      {
+        "_id": {"$oid":"5e15f7905e0be486b249d464"},
+        "name": "Carta del más allá",
+         "author": {"$oid":"5dd9050ce92b2709489d3a04"}
+      }
+]
