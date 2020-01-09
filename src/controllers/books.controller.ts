@@ -1,36 +1,29 @@
 import { Request, Response } from 'express';
 import Book, { IBook } from '../models/book.model';
+import { getBookDB, insertBookDB, getBooksDB, deleteBookDB } from '../services/books.service';
+
 
 export async function getBooks(req: Request, res: Response): Promise<Response> {
-  const books = await Book.find().populate('author').exec();
+  const books = await getBooksDB();
   return res.json(books);
 }
 
-export async function createBook(
-  req: Request,
-  res: Response,
-): Promise<Response> {
+export async function createBook(req: Request,res: Response,): Promise<Response> {
   
-  const newBook = new Book(req.body);
-  await newBook.save();
+  const newBook = await insertBookDB(req.body)
   return res.json({
     message: 'Book Saved Successfully',
     newBook,
   });
 }
 
-export async function getBook(req: Request, res: Response): Promise<Response> {
-  const { id } = req.params;
-  const book = await Book.findById(id);
+export async function getBook(req: Request, res: Response): Promise<Response> {  
+  const book = await getBookDB(req.params.BookId)
   return res.json(book);
 }
 
-export async function deleteBook(
-  req: Request,
-  res: Response,
-): Promise<Response> {
-  const { id } = req.params;
-  const book = (await Book.findByIdAndRemove(id)) as IBook;
+export async function deleteBook(req: Request,res: Response,): Promise<Response> {
+  await deleteBookDB(req.params.BookId)
   
   return res.json({ message: 'Club Deleted' });
 }
