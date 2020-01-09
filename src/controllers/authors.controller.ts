@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import Author, { IAuthor } from '../models/author.model';
-import { getAuthorDB, insertAuthorDB, getAuthorsDB, deleteAuthorDB } from '../services/authors.service';
+import { getAuthorDB, insertAuthorDB, getAuthorsDB, deleteAuthorDB, updateAuthorDB } from '../services/authors.service';
 
 
 export async function getAuthors(req: Request, res: Response): Promise<Response> {
@@ -28,17 +28,14 @@ export async function getAuthor(req: Request, res: Response): Promise<Response>{
   }
   
 
-  /*export async function updateAuthor(
-  req: Request,
-  res: Response,
-): Promise<Response> {
-  const { _id } = req.params;
-  const updatedAuthor = await Author.findByIdAndUpdate({_id},req.body ,{new:true});
+export async function updateAuthor( req: Request,res: Response,): Promise<Response> {
+  const  { code } = req.body;
+  const updatedAuthor = await updateAuthorDB(code, req.body)
   return res.json({
     message: 'Successfully updated',
-    updatedAuthor,
+    updateAuthor
   });
-}* */
+}
   
 
 

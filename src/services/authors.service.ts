@@ -21,8 +21,9 @@ import Author, { IAuthor } from '../models/author.model';
         return await Author.findOneAndDelete(authorID);
     }
 
-    export async function updateAuthor(){
-
+    export async function updateAuthorDB(code: any ,author: IAuthor){
+        
+       return await Author.findOneAndUpdate({code}, author,{new:true} )
     }
 
 

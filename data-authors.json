@@ -2,21 +2,25 @@
     {
         "_id": {"$oid":"5dd9050ce92b2709489d3a01"},
         "name": "Vladimir Nabokov",
-         "books": ["5ddd157cb25ffbc85884c1f1", "5ddd157cb25ffbc85884c1f3", "5ddd157cb25ffbc85884c1f4"]
+         "books": ["5ddd157cb25ffbc85884c1f1", "5ddd157cb25ffbc85884c1f3", "5ddd157cb25ffbc85884c1f4"],
+         "code": "1234"
       },
       {
         "_id": {"$oid":"5dd9050ce92b2709489d3a02"},
         "name": "Ayn Rand",
-         "books": [{"$oid":"5e15f75d035342e379cbab19"}, {"$oid":"5e15f75d035342e379cbab13"}, {"$oid":"5e15f75d035342e379cbab12"}]
+         "books": [{"$oid":"5e15f75d035342e379cbab19"}, {"$oid":"5e15f75d035342e379cbab13"}, {"$oid":"5e15f75d035342e379cbab12"}],
+         "code": "1232"
       },
       {
         "_id": {"$oid":"5dd9050ce92b2709489d3a03"},
         "name": "Charles Bukowski",
-         "books": [{"$oid":"5e15f75d035342e179cbab19"}, {"$oid":"5e15f75d025342e379cbab13"}]
+         "books": [{"$oid":"5e15f75d035342e179cbab19"}, {"$oid":"5e15f75d025342e379cbab13"}],
+         "code": "1233"
       },
       {
         "_id": "5dd9050ce92b2709489d3a04",
         "name": "Torcuato Luca de Tena",
-         "books": [{"$oid":"5e15f7905e0be486b249d464"}, {"$oid":"5e15f7905e0be496b449d464"}]
+         "books": [{"$oid":"5e15f7905e0be486b249d464"}, {"$oid":"5e15f7905e0be496b449d464"}],
+         "code": "1231"
       }
 ]

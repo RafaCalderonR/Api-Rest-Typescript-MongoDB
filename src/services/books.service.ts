@@ -21,8 +21,9 @@ import Book, { IBook } from '../models/book.model';
         return await Book.findOneAndDelete(bookID);
     }
 
-    export async function updateBook(){
-
-    }
-
+    export async function updateBookDB(isbn: any ,book: IBook){
+        
+        return await Book.findOneAndUpdate({isbn}, book,{new:true} )
+     }
+ 
 
