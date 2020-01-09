@@ -10,13 +10,12 @@ export async function createBook(
   req: Request,
   res: Response,
 ): Promise<Response> {
-  const { _id, name, author } = req.body;
-  const newBook = { _id, name, author };
-  const book = new Book(newBook);
-  await book.save();
+  
+  const newBook = new Book(req.body);
+  await newBook.save();
   return res.json({
     message: 'Book Saved Successfully',
-    author,
+    newBook,
   });
 }
 

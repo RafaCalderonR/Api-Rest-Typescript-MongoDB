@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getAuthors, createAuthor, getAuthor, deleteAuthor, updateAuthor } from '../controllers/authors.controller'
+import { getAuthors, createAuthor, getAuthor, deleteAuthor } from '../controllers/authors.controller'
 
 
 const router = Router();
@@ -11,6 +11,6 @@ router.route('/')
 router.route('/:AuthorId')
     .get(getAuthor)
     .delete(deleteAuthor)
-    .put(updateAuthor);
+    .put();
 
 export default router;
