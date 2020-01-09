@@ -25,7 +25,7 @@ export async function getBook(req: Request, res: Response): Promise<Response> {
 export async function deleteBook(req: Request,res: Response): Promise<Response> {
   await deleteBookDB(req.params.BookId)
   
-  return res.json({ message: 'Club Deleted' });
+  return res.json({ message: 'Book Deleted' });
 }
 
 export async function updateBook(req: Request,res: Response): Promise<Response> {
