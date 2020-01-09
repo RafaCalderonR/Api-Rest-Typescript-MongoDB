@@ -20,7 +20,6 @@ services:
 
   
   mongo-seed:
-    
       build:
         context: .  
         dockerfile: seed.Dockerfile
