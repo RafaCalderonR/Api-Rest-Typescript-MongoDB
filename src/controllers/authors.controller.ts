@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import Author, { IAuthor } from '../models/author.model';
-import { getAuthorDB, insertAuthorDB, getAuthorsDB, deleteAuthorDB } from '../services/author.service';
+import { getAuthorDB, insertAuthorDB, getAuthorsDB, deleteAuthorDB } from '../services/authors.service';
 
 
 export async function getAuthors(req: Request, res: Response): Promise<Response> {
